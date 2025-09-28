@@ -1,14 +1,13 @@
 //General Settings///////////////////////////////////////////////////////////////////////////////////////|
 {"height": 30, "spacing": 4,                                                                        /////|  
-//"output": "DP-1",                                                                                   /////|
+//"output": "DP-1",                                                                                 /////|
 "margin-top": 5,                                                                                    /////|
 "margin-left": 4,                                                                                   /////|
 "margin-right": 5,                                                                                  /////|
 /////////////////////////////////////////////////////////////////////////////////////////////////////////|
 
 //Modules Alignment//////////////////////////////////////////////////////////////////////////////////////|
-"modules-left": ["custom/arch","hyprland/workspaces","custom/aur","custom/whatsapp",                /////|
-"custom/discord","custom/mail","custom/retroarch","custom/kdenlive"],                               /////|
+"modules-left": ["custom/arch","hyprland/workspaces","custom/aur"],                                 /////|
 "modules-center": ["custom/quran","custom/salaat","custom/sunnah"],                                 /////|
 "modules-right": ["custom/cpu","custom/gpu","pulseaudio","network","clock","tray","custom/power"],  /////|
 /////////////////////////////////////////////////////////////////////////////////////////////////////////|
@@ -24,8 +23,8 @@
 "hyprland/workspaces": {                                                                             /////| 
 "persistent-workspaces": {"*": 5,},"disable-scroll": true,"all-outputs": true,                       /////|
 "warp-on-scroll": false,"format": "{icon}","format-icons": {                                         /////|
-"active": "<span font='20px'>󰮯</span>","default": "<span font='15px'></span>",                    /////|
-"urgent": "<span font='20px'>󰊠</span>"}}, 
+"active": "<span font='20px'>󰮯</span>","default": "<span font='15px'></span>",                      /////|
+"urgent": "<span font='20px'>󰊠</span>"}},                                                            /////|
 //////////////////////////////////////////////////////////////////////////////////////////////////////////|
 
 //Quran///////////////////////////////////////////////////////////////////////////////////////////////////|
@@ -70,36 +69,6 @@
 "custom/power": {"format": "<span font='20px'>󰐦</span>", "tooltip": false,                           /////|
 "on-click": "bash ~/.config/scripts/power.sh", "tooltip": true,                                      /////|
 "tooltip-format": "Power-Menu\nLeft Click To Open\nLeft Click Again To Close" },                     /////|
-//////////////////////////////////////////////////////////////////////////////////////////////////////////|
-
-//WhatsApp////////////////////////////////////////////////////////////////////////////////////////////////|
-"custom/whatsapp": {"format": "<span font='20px'></span>", "tooltip": false,                        /////|
-"on-click": "bash ~/.config/scripts/wa.sh", "tooltip": true,                                         /////|
-"tooltip-format": "WhatsApp\nLeft Click To Open\nLeft Click Again To Close" },                       /////|
-//////////////////////////////////////////////////////////////////////////////////////////////////////////|
-
-//RetroArch///////////////////////////////////////////////////////////////////////////////////////////////|
-"custom/retroarch": {"format": "<span font='20px'>󰺵</span>", "tooltip": false,                       /////|
-"on-click": "flatpak run org.libretro.RetroArch	", "tooltip": true,                                  /////|
-"tooltip-format": "RetroArch\nPlay Clasic Games" },                                                  /////|
-//////////////////////////////////////////////////////////////////////////////////////////////////////////|
-
-//RetroArch///////////////////////////////////////////////////////////////////////////////////////////////|
-"custom/kdenlive": {"format": "<span font='20px'>󰌲</span>", "tooltip": false,                        /////|
-"on-click": "flatpak run org.kde.kdenlive	", "tooltip": true,                                        /////|
-"tooltip-format": "Kdenlive\nEdit Videos" },                                                         /////|
-//////////////////////////////////////////////////////////////////////////////////////////////////////////|
-
-//Discord/////////////////////////////////////////////////////////////////////////////////////////////////|
-"custom/discord": {"format": "<span font='20px'></span>", "tooltip": false,                         /////|
-"on-click": "bash ~/.config/scripts/dc.sh", "tooltip": true,                                         /////|
-"tooltip-format": "Discord\nLeft Click To Open\nLeft Click Again To Close" },                        /////|
-//////////////////////////////////////////////////////////////////////////////////////////////////////////|
-
-//Email///////////////////////////////////////////////////////////////////////////////////////////////////|
-"custom/mail": {"format": "<span font='20px'></span>", "tooltip": false,                            /////|
-"on-click": "bash ~/.config/scripts/mail.sh", "tooltip": true,                                       /////|
-"tooltip-format": "Mail\nLeft Click To Open\nLeft Click Again To Close" },                           /////|
 //////////////////////////////////////////////////////////////////////////////////////////////////////////|
 
 //Clock///////////////////////////////////////////////////////////////////////////////////////////////////|

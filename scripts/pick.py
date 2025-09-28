@@ -22,6 +22,9 @@ class WallpaperSelector:
         self.bg_file = os.path.join(self.wallpaper_dir, "bg.jpg")
         self.theme_config_file = os.path.join(self.wallpaper_dir, "wallpaper_themes.json")
         
+        # Waybar themes directory
+        self.waybar_themes_dir = os.path.expanduser("~/.config/waybar/themes/")
+        
         # Load theme mapping from JSON file
         self.theme_mapping = self.load_theme_mapping()
         
@@ -140,12 +143,67 @@ class WallpaperSelector:
         
         theme_text = f"GTK Theme: {theme_info['gtk_theme']}\nIcon Theme: {theme_info['icon_theme']}\nGTK4 Theme: {theme_info['gtk4_theme']}"
         
+        # Check if Waybar theme exists for this wallpaper
+        waybar_theme_name = self.get_waybar_theme_name(wallpaper_filename)
+        if waybar_theme_name:
+            theme_text += f"\nWaybar Theme: {waybar_theme_name}"
+        else:
+            theme_text += "\nWaybar Theme: Default (no custom theme)"
+        
         if theme_info['gtk_theme'] == "Default":
             theme_text += "\n\nNo specific theme configured for this wallpaper."
         else:
             theme_text += f"\n\nTheme configuration loaded from:\n{self.theme_config_file}"
         
         self.theme_info_label.set_text(theme_text)
+    
+    def get_waybar_theme_name(self, wallpaper_filename):
+        """Get the Waybar theme filename for a wallpaper"""
+        # Remove extension from wallpaper filename
+        wallpaper_base = os.path.splitext(wallpaper_filename)[0]
+        
+        # Look for theme files with different extensions
+        possible_extensions = ['.css', '.style.css', '.theme.css']
+        
+        for ext in possible_extensions:
+            theme_filename = wallpaper_base + ext
+            theme_path = os.path.join(self.waybar_themes_dir, theme_filename)
+            if os.path.exists(theme_path):
+                return theme_filename
+        
+        # If no exact match, check for partial matches
+        for theme_file in os.listdir(self.waybar_themes_dir):
+            if theme_file.startswith(wallpaper_base) and theme_file.endswith('.css'):
+                return theme_file
+        
+        return None
+    
+    def apply_waybar_theme(self, wallpaper_filename):
+        """Apply Waybar theme based on wallpaper selection"""
+        waybar_theme_name = self.get_waybar_theme_name(wallpaper_filename)
+        
+        if not waybar_theme_name:
+            print(f"No Waybar theme found for wallpaper: {wallpaper_filename}")
+            return False
+        
+        try:
+            # Source and destination paths
+            source_path = os.path.join(self.waybar_themes_dir, waybar_theme_name)
+            dest_path = os.path.expanduser("~/.config/waybar/style.css")
+            
+            # Check if source file exists
+            if not os.path.exists(source_path):
+                print(f"Waybar theme file not found: {source_path}")
+                return False
+            
+            # Copy the theme file
+            shutil.copy2(source_path, dest_path)
+            print(f"Applied Waybar theme: {source_path} -> {dest_path}")
+            return True
+            
+        except Exception as e:
+            print(f"Error applying Waybar theme: {e}")
+            return False
     
     def copy_gtk4_theme(self, gtk4_theme_name):
         """Copy GTK-4.0 theme file to the config directory"""
@@ -314,15 +372,20 @@ class WallpaperSelector:
             if not theme_success:
                 self.show_warning("Wallpaper applied but there was an issue with GTK themes")
             
-            # 3. Apply wallpaper with swww
+            # 3. Apply Waybar theme
+            waybar_success = self.apply_waybar_theme(self.selected_filename)
+            if not waybar_success:
+                print("No custom Waybar theme found or error applying Waybar theme")
+            
+            # 4. Apply wallpaper with swww
             subprocess.run(["swww", "img", self.bg_file], check=True)
             print("Applied wallpaper with swww")
             
-            # 4. Run wal to generate colors with --cols16 flag
+            # 5. Run wal to generate colors with --cols16 flag
             subprocess.run(["wal", "-i", self.bg_file, "--cols16"], check=True)
             print("Generated colors with wal --cols16")
             
-            # 5. Copy color files
+            # 6. Copy color files
             home = os.path.expanduser("~")
             
             # Kitty colors
@@ -339,28 +402,28 @@ class WallpaperSelector:
                 shutil.copy2(hypr_src, hypr_dest)
                 print("Copied hyprland colors")
             
-            # Waybar colors
+            # Waybar colors (this is separate from the theme file)
             waybar_src = os.path.join(home, ".cache/wal/colors-waybar.css")
             waybar_dest = os.path.join(home, ".config/waybar/colors.css")
             if os.path.exists(waybar_src):
                 shutil.copy2(waybar_src, waybar_dest)
                 print("Copied waybar colors")
             
-            # 6. Update pywalfox
+            # 7. Update pywalfox
             pywalfox_success = self.update_pywalfox()
             if not pywalfox_success:
                 print("Warning: Pywalfox update failed")
             
-            # 7. Restart waybar
+            # 8. Restart waybar (to apply the new theme)
             subprocess.run(["pkill", "waybar"])
             subprocess.Popen(["waybar"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             print("Restarted waybar")
             
-            # 8. Reload hyprland
+            # 9. Reload hyprland
             subprocess.run(["hyprctl", "reload"])
             print("Reloaded hyprland")
             
-            # 9. Reload kitty
+            # 10. Reload kitty
             kitty_pids = subprocess.run(["pgrep", "kitty"], capture_output=True, text=True)
             if kitty_pids.stdout:
                 for pid in kitty_pids.stdout.strip().split('\n'):
@@ -372,6 +435,8 @@ class WallpaperSelector:
             success_message = "Wallpaper and themes applied successfully!"
             if not theme_success:
                 success_message = "Wallpaper applied successfully! (Theme had minor issues)"
+            if waybar_success:
+                success_message += " (Custom Waybar theme applied)"
             if not pywalfox_success:
                 success_message += " (Pywalfox update failed)"
             
@@ -398,46 +463,56 @@ class WallpaperSelector:
             print(f"Unexpected error updating pywalfox: {e}")
             return False
     
+    def reload_swaync_css(self):
+        """Reload SwayNC CSS to apply new colors"""
+        try:
+            subprocess.run(["swaync-client", "--reload-css"], check=True)
+            print("Reloaded SwayNC CSS")
+            return True
+        except subprocess.CalledProcessError as e:
+            print(f"Error reloading SwayNC CSS: {e}")
+            return False
+        except Exception as e:
+            print(f"Unexpected error reloading SwayNC CSS: {e}")
+            return False
+    
     def reset_apply_button(self):
         """Reset the apply button state"""
         self.apply_button.set_sensitive(True)
         self.apply_button.set_label("Apply Wallpaper")
     
+    def send_notification(self, summary, body, urgency="normal", timeout=5000):
+        """Send notification using notify-send (compatible with SwayNC)"""
+        # First reload SwayNC CSS to ensure notifications use the new color scheme
+        self.reload_swaync_css()
+        
+        try:
+            subprocess.run([
+                "notify-send", 
+                "-u", urgency,  # urgency: low, normal, critical
+                "-t", str(timeout),  # timeout in milliseconds
+                summary,
+                body
+            ], check=True)
+        except subprocess.CalledProcessError as e:
+            print(f"Error sending notification: {e}")
+        except Exception as e:
+            print(f"Unexpected error sending notification: {e}")
+    
     def show_error(self, message):
-        """Show error dialog"""
-        dialog = Gtk.MessageDialog(
-            transient_for=self.window,
-            flags=0,
-            message_type=Gtk.MessageType.ERROR,
-            buttons=Gtk.ButtonsType.OK,
-            text=message
-        )
-        dialog.run()
-        dialog.destroy()
+        """Show error notification"""
+        print(f"Error: {message}")
+        self.send_notification("Wallpaper Selector - Error", message, "critical", 10000)
     
     def show_warning(self, message):
-        """Show warning dialog"""
-        dialog = Gtk.MessageDialog(
-            transient_for=self.window,
-            flags=0,
-            message_type=Gtk.MessageType.WARNING,
-            buttons=Gtk.ButtonsType.OK,
-            text=message
-        )
-        dialog.run()
-        dialog.destroy()
+        """Show warning notification"""
+        print(f"Warning: {message}")
+        self.send_notification("Wallpaper Selector - Warning", message, "normal", 8000)
     
     def show_success(self, message):
-        """Show success dialog"""
-        dialog = Gtk.MessageDialog(
-            transient_for=self.window,
-            flags=0,
-            message_type=Gtk.MessageType.INFO,
-            buttons=Gtk.ButtonsType.OK,
-            text=message
-        )
-        dialog.run()
-        dialog.destroy()
+        """Show success notification"""
+        print(f"Success: {message}")
+        self.send_notification("Wallpaper Selector - Success", message, "normal", 5000)
     
     def run(self):
         """Show the window and start the application"""
@@ -451,9 +526,15 @@ def main():
         print(f"Error: Wallpaper directory {wallpaper_dir} does not exist")
         return
     
+    # Check if Waybar themes directory exists
+    waybar_themes_dir = os.path.expanduser("~/.config/waybar/themes/")
+    if not os.path.exists(waybar_themes_dir):
+        print(f"Note: Waybar themes directory {waybar_themes_dir} does not exist")
+        print("Custom Waybar themes will not be available")
+    
     # Check if required commands are available
-    required_commands = ['swww', 'wal', 'gsettings']
-    optional_commands = ['pywalfox']
+    required_commands = ['swww', 'wal', 'gsettings', 'notify-send']
+    optional_commands = ['pywalfox', 'swaync-client']
     
     for cmd in required_commands:
         if not shutil.which(cmd):

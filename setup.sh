@@ -154,7 +154,7 @@ gsettings set org.gnome.desktop.interface document-font-name "MesloLGL Nerd Font
 gsettings set org.gnome.desktop.interface monospace-font-name "MesloLGL Mono Nerd Font 12"
 gsettings set org.gnome.desktop.wm.preferences titlebar-font "MesloLGL Mono Nerd Font 12"
 sudo cp -r /home/$USER/dots/sys/lightdm/ /etc/
-cp -r ~/.config/hypr/bg/Cachydepths5K.jpg ~/.config/hypr/bg/bg.jpg
+cp -r ~/.config/hypr/bg/cachydepths5k.jpg ~/.config/hypr/bg/bg.jpg
 swww-daemon
 swww-img ~/.config/hypr/bg/bg.jpg
 wal -i ~/.config/hypr/bg/bg.jpg --cols16

@@ -3,7 +3,7 @@ Installation:
 
 1. Clone the repo: 
 ```bash
-git clone https://github.com/Riezz0/neon-anime.git /home/$USER/dots/
+git clone https://github.com/Riezz0/hyprcachy.git /home/$USER/dots/
 ```
 2. Change executeable permissions
 ```

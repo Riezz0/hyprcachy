@@ -8,7 +8,6 @@ echo "Installing AUR Packages"
 sleep 3
 
 paru -S --needed --noconfirm \
-  swww \
   hyprshot \
 	hypridle \
 	hyprlock \

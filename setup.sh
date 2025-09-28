@@ -85,7 +85,7 @@ mkdir -p ~/venv
 #-----Updating-System-----#
 echo "Checking For Updates For Newly Installed Packges"
 sleep 3
-yay -Syyu --noconfirm
+paru -Syyu --noconfirm
 #flatpak --noninteractive update
 
 #-----Oh-My-Zsh-----#
@@ -144,7 +144,7 @@ sudo cp -r /home/$USER/dots/.themes/oomox-lightdm /usr/share/themes/
 
 #-----Apply-Theme-----#
 echo "Applying Theme"
-Sleep 3
+sleep 3
 
 gsettings set org.gnome.desktop.interface cursor-theme "Future-black-cursors"
 gsettings set org.gnome.desktop.interface icon-theme "oomox-Cachydepths5K"
@@ -154,8 +154,9 @@ gsettings set org.gnome.desktop.interface document-font-name "MesloLGL Nerd Font
 gsettings set org.gnome.desktop.interface monospace-font-name "MesloLGL Mono Nerd Font 12"
 gsettings set org.gnome.desktop.wm.preferences titlebar-font "MesloLGL Mono Nerd Font 12"
 sudo cp -r /home/$USER/dots/sys/lightdm/ /etc/
-cp -r ~/.config/hypr/bg/anime-room.jpg ~/.config/hypr/bg/bg.jpg
-
+cp -r ~/.config/hypr/bg/Cachydepths5K.jpg ~/.config/hypr/bg/bg.jpg
+swww-daemon
+swww-img ~/.config/hypr/bg/bg.jpg
 wal -i ~/.config/hypr/bg/bg.jpg --cols16
 
 #-----Apply-GRUB-Theme-----#
@@ -164,7 +165,7 @@ echo "Please Choose Your GRUB Theme"
 echo "You Can Have A Look At https://github.com/vinceliuice/Elegant-grub2-themes For The Previews !!!!"
 sleep 5
 
-cd ~/config/git/
+cd ~/git/
 git clone https://github.com/vinceliuice/Elegant-grub2-themes.git
 cd Elegant-grub2-themes/
 ./install

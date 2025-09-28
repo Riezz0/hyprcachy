@@ -72,8 +72,12 @@ paru -S --needed --noconfirm \
 #sleep 3
 flatpak install --noninteractive flathub com.bitwarden.desktop 
 flatpak install --noninteractive flathub org.audacityteam.Audacity 
-#flatpak install --noninteractive flathub org.libretro.RetroArch
-#flatpak install --noninteractive flathub net.rpcs3.RPCS3
+flatpak install --noninteractive flathub org.libretro.RetroArch
+flatpak install --noninteractive flathub net.rpcs3.RPCS3
+flatpak install --noninteractive flathub org.localsend.localsend_app
+flatpak install --noninteractive flathub com.github.tchx84.Flatseal
+flatpak install --noninteractive flathub org.localsend.localsend_app
+
 
 #-----Create-Directories-----#
 

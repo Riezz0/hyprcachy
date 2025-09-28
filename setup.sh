@@ -147,16 +147,16 @@ echo "Applying Theme"
 sleep 3
 
 gsettings set org.gnome.desktop.interface cursor-theme "Future-black-cursors"
-gsettings set org.gnome.desktop.interface icon-theme "oomox-Cachydepths5K"
-gsettings set org.gnome.desktop.interface gtk-theme "oomox-Cachydepths5K"
+gsettings set org.gnome.desktop.interface icon-theme "oomox-cachydepths5k"
+gsettings set org.gnome.desktop.interface gtk-theme "oomox-cachydepths5k"
 gsettings set org.gnome.desktop.interface font-name "MesloLGL Nerd Font 12"
 gsettings set org.gnome.desktop.interface document-font-name "MesloLGL Nerd Font 12"
 gsettings set org.gnome.desktop.interface monospace-font-name "MesloLGL Mono Nerd Font 12"
 gsettings set org.gnome.desktop.wm.preferences titlebar-font "MesloLGL Mono Nerd Font 12"
 sudo cp -r /home/$USER/dots/sys/lightdm/ /etc/
 cp -r ~/.config/hypr/bg/cachydepths5k.jpg ~/.config/hypr/bg/bg.jpg
-swww-daemon
-swww-img ~/.config/hypr/bg/bg.jpg
+swww-daemon &
+swww-img ~/.config/hypr/bg/bg.jpg &
 wal -i ~/.config/hypr/bg/bg.jpg --cols16
 
 #-----Apply-GRUB-Theme-----#
@@ -168,7 +168,7 @@ sleep 5
 cd ~/git/
 git clone https://github.com/vinceliuice/Elegant-grub2-themes.git
 cd Elegant-grub2-themes/
-./install
+./install.sh
 
 echo "Installation Complete !!!"
 echo "Rebooting The System"

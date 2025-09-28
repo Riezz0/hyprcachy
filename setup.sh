@@ -177,6 +177,23 @@ git clone https://github.com/vinceliuice/Elegant-grub2-themes.git
 cd Elegant-grub2-themes/
 ./install.sh
 
+#-----Monitors-Config-----#
+echo "Configuring Monitors"
+
+# Get primary monitor (usually first one)
+primary_monitor=$(hyprctl monitors -j | jq -r '.[0] | "\(.name),\(.width)x\(.height)@\(.refreshRate),auto,1"')
+
+# Replace line 5 with primary monitor
+sed -i "5s/.*/monitor=$primary_monitor/" ~/.config/hypr/monitors.conf
+
+# Optional: Add other monitors as commented lines
+hyprctl monitors -j | jq -r '.[1:] | .[] | "\(.name),\(.width)x\(.height)@\(.refreshRate),auto,1"' | \
+while read -r monitor; do
+    if ! grep -q "$monitor" ~/.config/hypr/monitors.conf; then
+        echo "# monitor=$monitor" >> ~/.config/hypr/monitors.conf
+    fi
+done
+
 echo "Installation Complete !!!"
 echo "Rebooting The System"
 

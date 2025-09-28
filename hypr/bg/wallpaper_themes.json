@@ -1,0 +1,47 @@
+{
+    "anime-room.jpg": {
+        "gtk_theme": "oomox-anime_room",
+        "icon_theme": "oomox-anime_room",
+        "gtk4_theme": "oomox-anime_room"
+    },
+    "mountain.jpg": {
+        "gtk_theme": "oomox-mountain",
+        "icon_theme": "oomox-mountain",
+        "gtk4_theme": "oomox-mountain"
+    },
+    "sunset.jpg": {
+        "gtk_theme": "oomox-sunset",
+        "icon_theme": "oomox-sunset",
+        "gtk4_theme": "oomox-sunset"
+    },
+    "skyscraper.jpg": {
+        "gtk_theme": "oomox-skyscraper",
+        "icon_theme": "oomox-skyscraper",
+        "gtk4_theme": "oomox-skyscraper"
+    },
+    "fragmented.jpg": {
+        "gtk_theme": "oomox-fragmented",
+        "icon_theme": "oomox-fragmented",
+        "gtk4_theme": "oomox-fragmented"
+    },
+    "everforest.jpg": {
+        "gtk_theme": "oomox-everforest",
+        "icon_theme": "oomox-everforest",
+        "gtk4_theme": "oomox-everforest"
+    },
+    "lamborghini.jpg": {
+        "gtk_theme": "oomox-lamborghini",
+        "icon_theme": "oomox-lamborghini",
+        "gtk4_theme": "oomox-lamborghini"
+    },
+    "Cachydepths5K.png": {
+        "gtk_theme": "oomox-Cachydepths5K",
+        "icon_theme": "oomox-Cachydepths5K",
+        "gtk4_theme": "oomox-Cachydepths5K"
+    },
+    "cachynorth.png": {
+        "gtk_theme": "oomox-cachynorth",
+        "icon_theme": "oomox-cachynorth",
+        "gtk4_theme": "oomox-cachynorth"
+    }
+}

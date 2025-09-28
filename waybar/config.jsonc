@@ -1,0 +1,128 @@
+//General Settings///////////////////////////////////////////////////////////////////////////////////////|
+{"height": 30, "spacing": 4,                                                                        /////|  
+//"output": "DP-1",                                                                                   /////|
+"margin-top": 5,                                                                                    /////|
+"margin-left": 4,                                                                                   /////|
+"margin-right": 5,                                                                                  /////|
+/////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Modules Alignment//////////////////////////////////////////////////////////////////////////////////////|
+"modules-left": ["custom/arch","hyprland/workspaces","custom/aur","custom/whatsapp",                /////|
+"custom/discord","custom/mail","custom/retroarch","custom/kdenlive"],                               /////|
+"modules-center": ["custom/quran","custom/salaat","custom/sunnah"],                                 /////|
+"modules-right": ["custom/cpu","custom/gpu","pulseaudio","network","clock","tray","custom/power"],  /////|
+/////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Arch-Logo//////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/arch": {"format": "<span font='20px'>󰣇</span>", "tooltip": true,                            /////|
+"on-click": "bash ~/.config/scripts/binds.sh","tooltip-format":                                     /////|
+"Check Binds\nLeft Click To Open\nLeft Click Again To Close"} ,                                     /////|
+                                                                                                    /////|
+/////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Workspaces//////////////////////////////////////////////////////////////////////////////////////////////|
+"hyprland/workspaces": {                                                                             /////| 
+"persistent-workspaces": {"*": 5,},"disable-scroll": true,"all-outputs": true,                       /////|
+"warp-on-scroll": false,"format": "{icon}","format-icons": {                                         /////|
+"active": "<span font='20px'>󰮯</span>","default": "<span font='15px'></span>",                    /////|
+"urgent": "<span font='20px'>󰊠</span>"}}, 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Quran///////////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/quran": {"format": "<span font='20px'></span>", "tooltip": false,                           /////|
+"on-click": "bash ~/.config/scripts/quran.sh", "tooltip": true,                                      /////|
+"tooltip-format": "Quran\nLeft Click To Open\nLeft Click Again To Close" },                          /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Sunnah//////////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/sunnah": {"format": "<span font='20px'>󱛉</span>", "tooltip": false,                          /////|
+"on-click": "bash ~/.config/scripts/sunnah.sh", "tooltip": true,                                     /////|
+"tooltip-format": "The Sunnah\nLeft Click To Open\nLeft Click Again To Close" },                     /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+/////AUR//////////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/aur": {											                                                                 /////|
+"format": "{} {icon}",    										                                                       /////|
+"return-type": "json",										                                                           /////|
+"format-icons": {											                                                               /////|
+"has-updates": "Update/s Available",							                                                   /////|
+"updated": "Updates"},								                                                               /////|
+"on-click": "~/.config/scripts/updates.sh",								                                           /////|
+"exec-if": "which waybar-module-pacman-updates",							                                       /////|
+"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"},		     /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Salaat-Times////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/salaat": {"exec": "python ~/.config/scripts/salaat.py", "return-type": "json",               /////|
+"tooltip": true, "interval": 3 },                                                                    /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Swaync//////////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/swaync": {"format": "<span font='24px'>󰍜</span>", "tooltip": false,			                     /////|
+"on-click": "swaync-client -t"},                                        			                       /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//System Tray/////////////////////////////////////////////////////////////////////////////////////////////|
+"tray": {"spacing": 5, "icon-size": 25 },                                                            /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Power-Menu//////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/power": {"format": "<span font='20px'>󰐦</span>", "tooltip": false,                           /////|
+"on-click": "bash ~/.config/scripts/power.sh", "tooltip": true,                                      /////|
+"tooltip-format": "Power-Menu\nLeft Click To Open\nLeft Click Again To Close" },                     /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//WhatsApp////////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/whatsapp": {"format": "<span font='20px'></span>", "tooltip": false,                        /////|
+"on-click": "bash ~/.config/scripts/wa.sh", "tooltip": true,                                         /////|
+"tooltip-format": "WhatsApp\nLeft Click To Open\nLeft Click Again To Close" },                       /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//RetroArch///////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/retroarch": {"format": "<span font='20px'>󰺵</span>", "tooltip": false,                       /////|
+"on-click": "flatpak run org.libretro.RetroArch	", "tooltip": true,                                  /////|
+"tooltip-format": "RetroArch\nPlay Clasic Games" },                                                  /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//RetroArch///////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/kdenlive": {"format": "<span font='20px'>󰌲</span>", "tooltip": false,                        /////|
+"on-click": "flatpak run org.kde.kdenlive	", "tooltip": true,                                        /////|
+"tooltip-format": "Kdenlive\nEdit Videos" },                                                         /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Discord/////////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/discord": {"format": "<span font='20px'></span>", "tooltip": false,                         /////|
+"on-click": "bash ~/.config/scripts/dc.sh", "tooltip": true,                                         /////|
+"tooltip-format": "Discord\nLeft Click To Open\nLeft Click Again To Close" },                        /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Email///////////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/mail": {"format": "<span font='20px'></span>", "tooltip": false,                            /////|
+"on-click": "bash ~/.config/scripts/mail.sh", "tooltip": true,                                       /////|
+"tooltip-format": "Mail\nLeft Click To Open\nLeft Click Again To Close" },                           /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Clock///////////////////////////////////////////////////////////////////////////////////////////////////|
+"clock": {"format": "{:%H:%M:%S}", "interval": 1, "tooltip": false },                                /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Network/////////////////////////////////////////////////////////////////////////////////////////////////|
+"network": {"format-ethernet": "{ipaddr}", "tooltip": false,"format-disconnected": "Disconnected"},  /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//Audio///////////////////////////////////////////////////////////////////////////////////////////////////|
+"pulseaudio": {"format": "VOL:{volume}%", "format-muted": "Audio Muted", "tooltip": true,            /////|
+"on-click": "bash ~/.config/scripts/pavu.sh",                                                        /////|
+"tooltip-format": "Power-Menu\nLeft Click To Open PavuControl\nLeft Click Again To Close" },         /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//GPU-Temp////////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/gpu": {"format": "GPU:{}","exec": "~/.config/scripts/gpu.sh", "interval": 5,                 /////|
+"tooltip": false},                                                                                   /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+
+//CPU-Temp////////////////////////////////////////////////////////////////////////////////////////////////|
+"custom/cpu": {"format": "CPU:{}","exec": "~/.config/scripts/cpu.sh", "interval": 5,                 /////|
+"tooltip": false},                                                                                   /////|
+//////////////////////////////////////////////////////////////////////////////////////////////////////////|
+}

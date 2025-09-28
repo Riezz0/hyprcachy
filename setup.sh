@@ -160,7 +160,7 @@ cp -r ~/.config/hypr/bg/cachydepths5k.jpg ~/.config/hypr/bg/bg.jpg
 
 swww-daemon &
 
-swww-img ~/.config/hypr/bg/bg.jpg &
+swww img ~/.config/hypr/bg/bg.jpg &
 
 sleep 5
 

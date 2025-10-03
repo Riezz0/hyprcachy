@@ -432,11 +432,11 @@ class WallpaperSelector:
                 print("Reloaded kitty")
             
             # Show success message
-            success_message = "Wallpaper and themes applied successfully!"
+            success_message = "Theme Applied !!!"
             if not theme_success:
                 success_message = "Wallpaper applied successfully! (Theme had minor issues)"
             if waybar_success:
-                success_message += " (Custom Waybar theme applied)"
+                success_message += ""
             if not pywalfox_success:
                 success_message += " (Pywalfox update failed)"
             

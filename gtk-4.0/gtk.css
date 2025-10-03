@@ -2596,45 +2596,45 @@ window.ssd { box-shadow: 0 0 0 1px RGB(0 0 0 / 5%); }
 @define-color unfocused_borders @borders;
 /******************************************************/
 
-@define-color accent_bg_color #056659;
-@define-color accent_fg_color #0a1718;
-@define-color accent_color #056659;
-@define-color destructive_bg_color #06655B;
-@define-color destructive_fg_color #0a1718;
-@define-color destructive_color    #044b44;
-@define-color success_bg_color #077467;
-@define-color success_fg_color #0a1718;
-@define-color success_color    #05574d;
-@define-color warning_bg_color #078977;
-@define-color warning_fg_color #0a1718;
-@define-color warning_color    #056659;
-@define-color error_bg_color #06655B;
-@define-color error_fg_color #0a1718;
-@define-color error_color    #044b44;
-@define-color window_bg_color #0a1718;
-@define-color window_fg_color #8e9798;
-@define-color view_bg_color #0a1718;
-@define-color view_fg_color #8e9798;
-@define-color headerbar_bg_color #0a1718;
-@define-color headerbar_fg_color #8e9798;
-@define-color headerbar_border_color #0a1718;
+@define-color accent_bg_color #9b0001;
+@define-color accent_fg_color #160909;
+@define-color accent_color #1c6a01;
+@define-color destructive_bg_color #AC0203;
+@define-color destructive_fg_color #160909;
+@define-color destructive_color    #810102;
+@define-color success_bg_color #A32E2F;
+@define-color success_fg_color #160909;
+@define-color success_color    #7a2223;
+@define-color warning_bg_color #CF0102;
+@define-color warning_fg_color #160909;
+@define-color warning_color    #9b0001;
+@define-color error_bg_color #AC0203;
+@define-color error_fg_color #160909;
+@define-color error_color    #810102;
+@define-color window_bg_color #160909;
+@define-color window_fg_color #988d8d;
+@define-color view_bg_color #160909;
+@define-color view_fg_color #988d8d;
+@define-color headerbar_bg_color #160909;
+@define-color headerbar_fg_color #988d8d;
+@define-color headerbar_border_color #160909;
 @define-color headerbar_backdrop_color @window_bg_color;
 @define-color headerbar_shade_color rgba(0, 0, 0, 0.07);
-@define-color card_bg_color #0a1718;
-@define-color card_fg_color #8e9798;
-@define-color card_shade_color rgba(10, 23, 24, 0.07);
-@define-color popover_bg_color #0a1718;
-@define-color popover_fg_color #8e9798;
+@define-color card_bg_color #160909;
+@define-color card_fg_color #988d8d;
+@define-color card_shade_color rgba(22, 9, 9, 0.07);
+@define-color popover_bg_color #160909;
+@define-color popover_fg_color #988d8d;
 @define-color shade_color rgba(0, 0, 0, 0.07);
-@define-color scrollbar_outline_color rgba(142, 151, 152, 0.33);
-@define-color dialog_bg_color #0a1718;
-@define-color dialog_fg_color #8e9798;
-/*@define-color sidebar_bg_color #0a1718;*/
-/*@define-color sidebar_fg_color #8e9798;*/
-/*@define-color sidebar_bg_color #0a1718;*/
-/*@define-color sidebar_fg_color #8e9798;*/
-@define-color sidebar_bg_color #0a1718;
-@define-color sidebar_fg_color #8e9798;
+@define-color scrollbar_outline_color rgba(152, 141, 141, 0.33);
+@define-color dialog_bg_color #160909;
+@define-color dialog_fg_color #988d8d;
+/*@define-color sidebar_bg_color #160909;*/
+/*@define-color sidebar_fg_color #988d8d;*/
+/*@define-color sidebar_bg_color #160909;*/
+/*@define-color sidebar_fg_color #988d8d;*/
+@define-color sidebar_bg_color #160909;
+@define-color sidebar_fg_color #988d8d;
 
 * {
     font-weight: 400;
@@ -2650,20 +2650,20 @@ popover contents {
 /*listview,*/
 /*list,*/
 entry {
-    background: #0a1718;
-    color: #8e9798;
+    background: #160909;
+    color: #988d8d;
 }
 
 /*check:checked,*/
 /*radio:checked,*/
 /*switch:checked {*/
-/*    background-color: #056659;*/
-/*    color: #0a1718;*/
+/*    background-color: #1c6a01;*/
+/*    color: #160909;*/
 /*}*/
 
 /*levelbar trough block.filled,*/
 /*scale trough highlight {*/
-/*    background-color: #056659;*/
+/*    background-color: #9b0001;*/
 /*}*/
 
 
@@ -2681,45 +2681,45 @@ popover.menu modelbutton:hover, button.link:hover, button.link:hover, button.lin
     background-color: @accent_bg_color;
 }
 
-searchbar > revealer > box .close:hover, actionbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, searchbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, .toolbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, headerbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, actionbar > revealer > box button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), spinbutton > button.image-button.up:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), spinbutton > button.image-button.down:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), notebook > header > tabs > arrow:hover, popover.menu box.circular-buttons button.circular.image-button.model:hover, popover.menu box.inline-buttons button.image-button.model:hover, filechooser #pathbarbox > stack > box > button:hover, filechooser #pathbarbox > stack > box > box > button:hover, filechooser #pathbarbox > stack > box > menubutton > button:hover, button.sidebar-button:hover, button.emoji-section.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), infobar .close:hover, calendar > header > button:hover, actionbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, searchbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, .toolbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, headerbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, actionbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, searchbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, .toolbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, headerbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, splitbutton.flat > button:hover, splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, button.flat:hover { background: #079E7C; }
-searchbar > revealer > box .close:checked:hover, actionbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked:hover, searchbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked:hover, .toolbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked:hover, headerbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked:hover, actionbar > revealer > box button.arrow-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.arrow-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.arrow-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box button.image-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.image-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box button.image-text-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.image-text-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), spinbutton > button.image-button.up:checked:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), spinbutton > button.image-button.down:checked:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), notebook > header > tabs > arrow:checked:hover, popover.menu box.circular-buttons button.circular.image-button.model:checked:hover, popover.menu box.inline-buttons button.image-button.model:checked:hover, filechooser #pathbarbox > stack > box > button:checked:hover, filechooser #pathbarbox > stack > box > box > button:checked:hover, filechooser #pathbarbox > stack > box > menubutton > button:checked:hover, button.sidebar-button:checked:hover, button.emoji-section.image-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), infobar .close:checked:hover, calendar > header > button:checked:hover, actionbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:checked:hover, searchbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:checked:hover, .toolbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:checked:hover, headerbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:checked:hover, actionbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:checked:hover, searchbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:checked:hover, .toolbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:checked:hover, headerbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:checked:hover, splitbutton.flat > button:checked:hover, splitbutton.flat > menubutton > button:checked:hover, menubutton.flat > button:checked:hover, button.flat:checked:hover { background: #056659; }
+searchbar > revealer > box .close:hover, actionbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, searchbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, .toolbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, headerbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, actionbar > revealer > box button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), spinbutton > button.image-button.up:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), spinbutton > button.image-button.down:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), notebook > header > tabs > arrow:hover, popover.menu box.circular-buttons button.circular.image-button.model:hover, popover.menu box.inline-buttons button.image-button.model:hover, filechooser #pathbarbox > stack > box > button:hover, filechooser #pathbarbox > stack > box > box > button:hover, filechooser #pathbarbox > stack > box > menubutton > button:hover, button.sidebar-button:hover, button.emoji-section.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), infobar .close:hover, calendar > header > button:hover, actionbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, searchbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, .toolbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, headerbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, actionbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, searchbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, .toolbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, headerbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, splitbutton.flat > button:hover, splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, button.flat:hover { background: #810102; }
+searchbar > revealer > box .close:checked:hover, actionbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked:hover, searchbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked:hover, .toolbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked:hover, headerbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked:hover, actionbar > revealer > box button.arrow-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.arrow-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.arrow-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box button.image-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.image-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box button.image-text-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.image-text-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), spinbutton > button.image-button.up:checked:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), spinbutton > button.image-button.down:checked:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), notebook > header > tabs > arrow:checked:hover, popover.menu box.circular-buttons button.circular.image-button.model:checked:hover, popover.menu box.inline-buttons button.image-button.model:checked:hover, filechooser #pathbarbox > stack > box > button:checked:hover, filechooser #pathbarbox > stack > box > box > button:checked:hover, filechooser #pathbarbox > stack > box > menubutton > button:checked:hover, button.sidebar-button:checked:hover, button.emoji-section.image-button:checked:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), infobar .close:checked:hover, calendar > header > button:checked:hover, actionbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:checked:hover, searchbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:checked:hover, .toolbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:checked:hover, headerbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:checked:hover, actionbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:checked:hover, searchbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:checked:hover, .toolbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:checked:hover, headerbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:checked:hover, splitbutton.flat > button:checked:hover, splitbutton.flat > menubutton > button:checked:hover, menubutton.flat > button:checked:hover, button.flat:checked:hover { background: #9b0001; }
 
 /*
 
-// oomox-cachydepths5k scheme by oomox-cachydepths5k
+// oomox-lamborghini scheme by oomox-lamborghini
 
 // Themix/Oomox theme:
-themixACCENT_BG: #056659;
-themixBG: #0a1718;
-themixBTN_BG: #079E7C;
-themixBTN_FG: #0a1718;
-themixCARET1_FG: #8e9798;
-themixCARET2_FG: #8e9798;
-themixFG: #8e9798;
-themixHDR_BG: #0a1718;
-themixHDR_BTN_BG: #079E7C;
-themixHDR_BTN_FG: #0a1718;
-themixHDR_FG: #8e9798;
-themixICONS_ARCHDROID: #056659;
-themixICONS_DARK: #546b54;
-themixICONS_LIGHT: #06655B;
-themixICONS_LIGHT_FOLDER: #708F70;
-themixICONS_MEDIUM: #044b44;
-themixICONS_SYMBOLIC_ACTION: #616b6c;
-themixICONS_SYMBOLIC_PANEL: #8e9798;
-themixMENU_BG: #0a1718;
-themixMENU_FG: #8e9798;
-themixSEL_BG: #056659;
-themixSEL_FG: #0a1718;
-themixSPOTIFY_PROTO_BG: #0a1718;
-themixSPOTIFY_PROTO_FG: #8e9798;
-themixSPOTIFY_PROTO_SEL: #056659;
-themixSURUPLUS_GRADIENT1: #616b6c;
-themixSURUPLUS_GRADIENT2: #056659;
-themixTXT_BG: #0a1718;
-themixTXT_FG: #8e9798;
-themixWM_BORDER_FOCUS: #056659;
-themixWM_BORDER_UNFOCUS: #0a1718;
+themixACCENT_BG: #1c6a01;
+themixBG: #160909;
+themixBTN_BG: #1c6a01;
+themixBTN_FG: #160909;
+themixCARET1_FG: #988d8d;
+themixCARET2_FG: #988d8d;
+themixFG: #988d8d;
+themixHDR_BG: #160909;
+themixHDR_BTN_BG: #810102;
+themixHDR_BTN_FG: #160909;
+themixHDR_FG: #988d8d;
+themixICONS_ARCHDROID: #9b0001;
+themixICONS_DARK: #6b6060;
+themixICONS_LIGHT: #AC0203;
+themixICONS_LIGHT_FOLDER: #810102;
+themixICONS_MEDIUM: #1c6a01;
+themixICONS_SYMBOLIC_ACTION: #6b6060;
+themixICONS_SYMBOLIC_PANEL: #988d8d;
+themixMENU_BG: #160909;
+themixMENU_FG: #988d8d;
+themixSEL_BG: #9b0001;
+themixSEL_FG: #160909;
+themixSPOTIFY_PROTO_BG: #160909;
+themixSPOTIFY_PROTO_FG: #988d8d;
+themixSPOTIFY_PROTO_SEL: #9b0001;
+themixSURUPLUS_GRADIENT1: #6b6060;
+themixSURUPLUS_GRADIENT2: #9b0001;
+themixTXT_BG: #160909;
+themixTXT_FG: #988d8d;
+themixWM_BORDER_FOCUS: #9b0001;
+themixWM_BORDER_UNFOCUS: #160909;
 
 */
 
@@ -2834,8 +2834,8 @@ menubutton.flat > button,
 headerbar button,
 headerbar button.flat,
 header button {
-    background-color: #079E7C;
-    color: #0a1718;
+    background-color: #810102;
+    color: #160909;
 }
 
 scale trough slider,
@@ -2843,8 +2843,8 @@ switch slider,
 .image-button,
 button.flat,
 button {
-    background-color: #079E7C;
-    color: #0a1718;
+    background-color: #1c6a01;
+    color: #160909;
 }
 
 
@@ -2956,8 +2956,8 @@ button.flat:checked,
 
 .image-button:checked,
 button:checked {
-    background-color: #056659;
-    color: #0a1718;
+    background-color: #9b0001;
+    color: #160909;
 }
 
 
@@ -2966,14 +2966,14 @@ switch:hover slider,
 scale:hover trough slider,
 button.flat:hover,
 button:hover {
-    background-color: rgba(7, 158, 124, 0.8);
+    background-color: rgba(28, 106, 1, 0.8);
 }
 
-switch:checked > slider { background-color: #0a1718; }
+switch:checked > slider { background-color: #160909; }
 
 button.flat:checked:hover,
 button:checked:hover {
-    background-color: rgba(5, 102, 89, 0.8);
+    background-color: rgba(155, 0, 1, 0.8);
 }
 
 infobar .close:hover, searchbar > revealer > box .close:hover, actionbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, searchbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, .toolbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, headerbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, actionbar > revealer > box button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), actionbar > revealer > box button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), .toolbar button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), spinbutton > button.image-button.up:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), spinbutton > button.image-button.down:hover:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), button.sidebar-button:hover, notebook > header > tabs > arrow:hover, window.dialog.message.csd .dialog-action-area > button:hover, popover.menu box.circular-buttons button.circular.image-button.model:hover, popover.menu box.inline-buttons button.image-button.model:hover, button.emoji-section.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), calendar > header > button:hover, actionbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, searchbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, .toolbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, headerbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button:hover, actionbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, searchbar > revealer > box splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, .toolbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, headerbar splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > menubutton > button:hover, splitbutton.flat > button:hover, splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, button.flat:hover { opacity: 0.85; }
@@ -2984,7 +2984,7 @@ infobar .close:hover, searchbar > revealer > box .close:hover, actionbar > revea
 * check,
 * radio {
   background: @card_bg_color;
-  color: #056659;
+  color: #1c6a01;
   border-color: mix(@card_fg_color,@card_bg_color,0.8);
   /*-gtk-icon-source: builtin;*/
   /*-gtk-icon-source: none;*/
@@ -3010,7 +3010,7 @@ radio:indeterminate {
 menu menuitem check, menu menuitem check:hover, menu menuitem check:disabled, menu menuitem check:not(:checked), menu menuitem check:not(:checked):hover, menu menuitem check:not(:checked):disabled, menu menuitem check:checked, menu menuitem check:checked:hover, menu menuitem check:checked:disabled, menu menuitem check:indeterminate, menu menuitem check:indeterminate:hover, menu menuitem check:indeterminate:disabled, menu menuitem radio, menu menuitem radio:hover, menu menuitem radio:disabled, menu menuitem radio:not(:checked), menu menuitem radio:not(:checked):hover, menu menuitem radio:not(:checked):disabled, menu menuitem radio:checked, menu menuitem radio:checked:hover, menu menuitem radio:checked:disabled, menu menuitem radio:indeterminate, menu menuitem radio:indeterminate:hover, menu menuitem radio:indeterminate:disabled,
 popover.menu check, popover.menu check:hover:checked, popover.menu check:hover:indeterminate, popover.menu check:hover:not(:checked):not(:indeterminate), popover.menu check:active:checked, popover.menu check:active:indeterminate, popover.menu check:active:not(:checked):not(:indeterminate), popover.menu radio, popover.menu radio:hover:checked, popover.menu radio:hover:indeterminate, popover.menu radio:hover:not(:checked):not(:indeterminate), popover.menu radio:active:checked, popover.menu radio:active:indeterminate, popover.menu radio:active:not(:checked):not(:indeterminate) {
   background: none;
-  color: #056659;
+  color: #1c6a01;
   border-color: mix(@headerbar_fg_color,@headerbar_bg_color,0.8);
   border-width: 1px;
   border-style: solid;
@@ -3028,7 +3028,7 @@ popover.menu check:checked,
 popover.menu radio:checked,
 menu check:checked,
 menu radio:checked {
-  color: #056659;
+  color: #1c6a01;
   border-color: mix(@headerbar_fg_color,@headerbar_bg_color,0.8);
 }
 
